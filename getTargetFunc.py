@@ -1,4 +1,5 @@
-from .variables import player_x, eaten_ghost, powerup, player_y, inky, blinky, pinky, clyde
+from variables import player_x, player_y, powerup, eaten_ghost
+from PacMan import inky, blinky, pinky, clyde
 
 def get_targets(blink_x, blink_y, ink_x, ink_y, pink_x, pink_y, clyd_x, clyd_y):
     if player_x < 450:

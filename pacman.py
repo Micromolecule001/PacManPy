@@ -1,22 +1,23 @@
+# PacMan.py
 import pygame
-
-from src.variables import *
-from src.drawBoardFunc import draw_board
-from src.ghostClass import Ghost
-from src.drawPlayerFunc import draw_player
-from src.checkPosFunc import check_position
-from src.movePlayerFunc import move_player
-from src.getTargetFunc import get_targets
-from src.drawMicsFunc import draw_misc
-from src.checkCollisionFunc import check_collisions
+from drawBoardFunc import draw_board
+from drawPlayerFunc import draw_player
+from movePlayerFunc import move_player
+from drawMicsFunc import draw_misc
+from getTargetFunc import get_targets
 
 pygame.init()
+
+from variables import timer, fps, screen, blinky_img, pinky_img, inky_img, clyde_img, inky_box, pinky_box, blinky_box, clyde_box, boards
+from ghostClass import Ghost
+from checkPosFunc import check_position 
+from checkCollisionFunc import check_collisions
 
 # main game loop 
 while run:
     timer.tick(fps)
     if counter < 19:
-        counter += 1
+        counter += 1                    
         if counter > 3:
             flicker = False
     else:
@@ -36,8 +37,10 @@ while run:
 
     screen.fill('black')
     draw_board()
+
     center_x = player_x + 23
     center_y = player_y + 24
+    
     if powerup:
         ghost_speeds = [1, 1, 1, 1]
     else:
@@ -65,7 +68,9 @@ while run:
             game_won = False
 
     player_circle = pygame.draw.circle(screen, 'black', (center_x, center_y), 20, 2)
+
     draw_player()
+
     blinky = Ghost(blinky_x, blinky_y, targets[0], ghost_speeds[0], blinky_img, blinky_direction, blinky_dead,
                    blinky_box, 0)
     inky = Ghost(inky_x, inky_y, targets[1], ghost_speeds[1], inky_img, inky_direction, inky_dead,
@@ -74,10 +79,13 @@ while run:
                   pinky_box, 2)
     clyde = Ghost(clyde_x, clyde_y, targets[3], ghost_speeds[3], clyde_img, clyde_direction, clyde_dead,
                   clyde_box, 3)
+    
     draw_misc()
+    
     targets = get_targets(blinky_x, blinky_y, inky_x, inky_y, pinky_x, pinky_y, clyde_x, clyde_y)
 
     turns_allowed = check_position(center_x, center_y)
+
     if moving:
         player_x, player_y = move_player(player_x, player_y)
         if not blinky_dead and not blinky.in_box:

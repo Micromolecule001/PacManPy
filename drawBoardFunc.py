@@ -1,4 +1,4 @@
-from .variables import level,  screen, flicker, num1, num2, PI, color
+from variables import level,  screen, flicker, num1, num2, PI, color
 import pygame
 
 def draw_board():

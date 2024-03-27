@@ -1,7 +1,9 @@
 import pygame
 import math
 
-from .boardArray import boards
+pygame.init()
+
+from boardArray import boards
 
 # settings variables: screen, framerates, fonts etc...
 
@@ -13,7 +15,7 @@ screen = pygame.display.set_mode([WIDTH, HEIGHT])
 num1 = ((HEIGHT - 50) // 32 ) # column constant
 num2 = (WIDTH // 30) # row constant
 num3 = 15 # fat factor for the player
-font = pygame.font.SysFont('freesansbold.ttf', 20) # font: default windows
+
 level = boards # board array imported from board.py
 color = 'blue' # color variable
 PI = math.pi # pi 
@@ -42,6 +44,7 @@ game_won = False
 player_x = 450
 player_y = 663
 player_speed = 2
+ 
 
 # targets of ghosts
 targets = [
@@ -89,6 +92,8 @@ clyde_direction = 2
 
 spooked_img = pygame.transform.scale(pygame.image.load("./PacManPy/assets/ghost_images/powerup.png"), (45, 45))
 dead_img = pygame.transform.scale(pygame.image.load("./PacManPy/assets/ghost_images/dead.png"), (45, 45))
+
+font = pygame.font.Font(None, 30)
 
 ghost_speeds = [2, 2, 2, 2]
 

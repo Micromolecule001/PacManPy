@@ -1,4 +1,4 @@
-from .variables import powerup, screen, level, HEIGHT, WIDTH, dead_img, eaten_ghost, spooked_img
+from variables import powerup, screen, level, HEIGHT, WIDTH, dead_img, eaten_ghost, spooked_img
 import pygame
 
 

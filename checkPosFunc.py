@@ -1,4 +1,4 @@
-from .variables import HEIGHT, WIDTH, direction, level
+from variables import HEIGHT, WIDTH, direction, level
 
 def check_position(centerx, centery):
     

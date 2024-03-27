@@ -1,4 +1,4 @@
-from .variables import direction, turns_allowed, player_speed
+from variables import direction, turns_allowed, player_speed
 
 def move_player(play_x, play_y):
     if direction == 0 and turns_allowed[0]:

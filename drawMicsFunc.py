@@ -1,5 +1,9 @@
-from .variables import font, screen, powerup, lives, score, player_images
+from variables import screen, powerup, lives, score, player_images
 import pygame
+
+pygame.init()
+
+font = pygame.font.Font(None, 30)
 
 def draw_misc():
 

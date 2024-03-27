@@ -1,4 +1,5 @@
-from .variables import HEIGHT, WIDTH, player_x, level, center_y, center_x
+from variables import HEIGHT, WIDTH, player_x, level
+from PacMan import center_y, center_x
 
 def check_collisions(scor, power, power_count, eaten_ghosts):
     
